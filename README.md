@@ -10,5 +10,5 @@
 <center class="half">
     <img src="figures/1.png" width="400"/>
     <img src="figures/2.png" width="400"/>
-    <img src="figures/3.png" width="700"/>
+    <img src="figures/4.png" width="700"/>
 </center>
