@@ -1,0 +1,42 @@
+\section{模板使用基本知识}
+文档模板根据成都理工大学本科生实验报告模板\cite{cdut_lab_report}所更改，增删了一些内容，但主体没有发生变化。本模板适用于\LaTeX  \cite{knuth1984texbook}新手，讲述内容不全面也不够精细，但是对于新人书写实验报告足够了，想要精细学习的读者可以阅读阅读刘海洋的书籍。对本模板有意见或者不懂之处欢迎致电作者Nelson Cheung，邮箱：zhangjunyu@nelson-cheung.cn。模版原作者的邮箱是549274614@qq.com。
+
+在开始介绍前首先介绍我们所接触的\LaTeX 中的3种名词，分别是套装发行版、编译引擎与编译器。
+\begin{itemize}
+\item \textbf{套装发行版}。俗称\LaTeX 的核心，常见的是TeXlive套装\cite{texlive}。
+
+\item \textbf{编译引擎}。编译引擎是用来编译tex文档，生成PDF文件。常见的编译引擎有xelatex，pdflatex和bibtex。xelatex用来编译中文文档，pdflatex用来编译纯英文文档，bibtex用来编译参考文献。
+ 
+\item \textbf{编辑器}。顾名思义，编辑器就是编辑tex文档所用的软件，在本地编写本文档使用的是Visual Studio Code（vscode）\cite{vscode}，也是作者推荐的一款编辑器，网上可以免费下载。在vscode中，需要下载\LaTeX{}插件才能支持\LaTeX{}语法高亮和编译等操作。
+\end{itemize}
+
+阅读或使用本模板时建议与tex文档对比学习。
+
+在本地环境下使用\LaTeX 需要安装非常庞大的\LaTeX 套装发行版，而且没有办法支持即时编译和显示。Overleaf\cite{overleaf}是一个能够在线编写\LaTeX{}代码然后实时编译的工具。借助于Overleaf，我们既不需要下载和安装庞大的TeXlive套装，也不需要去管理\LaTeX 所需要的各种环境。我们只需要在Overleaf的在线编辑器上编写和编译tex文档即可。
+
+本模版完全在Overleaf下开发和维护。下载本模版的zip压缩包后，无需解压
+
+TODO：Overleaf的使用。
+
+\subsection{文件结构}
+解压压缩包后，内含的文件内容与结构如下
+\begin{itemize}
+\item \textbf{main.pdf}：本文件，内包括写作方法与注意事项。
+\item \textbf{main.tex}：实验报告主文件，包括报告整体结构与一些全局定义。
+\item \textbf{attachment}：内含文件attachment.pdf与attachment.docx，为实验报告中的心得体会，具体书写方式详见文末心得体会处。
+\item \textbf{body}：内含各章节tex文档（如section\_1.tex），方便起见，每一章（每一实验）单独使用一个文档书写。
+\item \textbf{figure}：文档中各类图片依照命名规范至于此文件夹中，方便统一管理，其中sysu.jpeg为文档必须图片，请勿删除。
+\item \textbf{preface}：内含文档cover.tex为首页封面与目录设置。
+\item \textbf{setup}：内含文档format.tex与package.tex，分别为全局设置文档与宏包文档，模板使用了模板必须与一些常用宏包，如有特殊需要可以自行添加在文档内，方便统一管理。
+\end{itemize}
+
+\subsection{文档结构}
+打开文件main.tex文件后，内为文档内容结构
+
+\inputminted[linenos,frame=lines]{latex}{main.tex}
+
+\verb|\doucumentclass[...]{...}| 用来设置文档类型，本模板使用article类型。
+在 \verb|\doucumentclass| 与 \verb|\begin{document}| 中间的区域称为导言区，全局设置与宏包添加均写在此处。
+文档内容使用 \verb|\include{...}| 逐个添加正文的每个章节，便于整体管理的同时也使主文档美观简洁。
+cover为文档封面与目录，body内为文档各章节，attachment为学生实验心得。
+文档内容从 \verb|\begin{document}| 开始，结束于 \verb|\end{document}| 。
